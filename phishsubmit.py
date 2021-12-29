@@ -33,16 +33,16 @@ def netcraft(phishurl):
 
 	headers = {'Content-Type':'application/json'}
 	data = {"urls": [{ "url": phishurl}], "email": netcraft_email}
-	report = requests.post('https://report.netcraft.com/api/v3/test/report/urls',headers=headers, data=json.dumps(data))
+	report = requests.post('https://report.netcraft.com/api/v3/report/urls',headers=headers, data=json.dumps(data))
 
 	if report.status_code == 200:
-		print('URL', phishurl, 'successfully reported to NetCraft.')
+		print('URL', phishurl, 'successfully reported to Netcraft.')
 	elif report.text.find('Duplicate of a recent submission') != -1:
-		print('URL', phishurl, 'already reported to NetCraft.')
+		print('URL', phishurl, 'already reported to Netcraft.')
 	elif report.status_code == 429:
-		print('NetCraft is rate limiting your submissions.')
+		print('Netcraft is rate limiting your submissions.')
 	else:
-		print('An error occured while submitting URL to NetCraft.')
+		print('An error occured while submitting URL to Netcraft.')
 
 def urlscan(phishurl):
 	headers = {'API-Key':urlscan_api_key,'Content-Type':'application/json'}
@@ -90,7 +90,7 @@ def reporting(file,config,url):
 	
 	Set API keys in config.ini
 	
-	Currently supports PhishTank and Netcraft."""
+	Currently supports PhishTank, Netcraft, and urlscan.io."""
 	
 	setconfigs(config)
 	
