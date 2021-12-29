@@ -44,5 +44,6 @@ Options:
 This is a tool I made for personal use, to make my workflow a bit easier. Yes, I know the code is terrible. But it *does* work. Feel free to submit pull requests or file issues.
 
 ## See also
-[Abwhose](https://github.com/bradleyjkemp/abwhose)
-[Phish Report](https://phish.report/)
+* [Abwhose](https://github.com/bradleyjkemp/abwhose): Tool for locating abuse contacts to report phishing sites to
+
+* [Phish Report](https://phish.report/): Reports phishing sites to multiple services, and helps locate the correct abuse contacts
