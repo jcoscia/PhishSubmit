@@ -178,13 +178,13 @@ def dryrun_report(phishurl, service):  # handle dry-runs by doing nothing
 @click.option('--dry-run', 'dryrun', help='Do not actually submit URLs to services.', flag_value=True)
 @click.command(no_args_is_help=True)
 def reporting(file, config, url, dryrun):
-    global dry_run
-    dry_run = dryrun
     """Tool to report phishing URLs to security services.
 
     Set API keys in config.ini
 
     Currently supports PhishTank, Netcraft, and urlscan.io."""
+    global dry_run
+    dry_run = dryrun
 
     setconfigs(config)
 
